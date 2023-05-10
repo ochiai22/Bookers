@@ -9,7 +9,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       render :new
-    end
+    end 
   end
 
   def index
