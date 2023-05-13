@@ -32,9 +32,10 @@ class BooksController < ApplicationController
     if @book.update(book_params)
     flash[:notice] = "Book was successfully updated."
     redirect_to book_path(@book.id)
-   else
-     render :edit
-   end
+    else
+    @books = Book.all.order(id: :asc)
+    render :edit
+    end
   end
   
   def destroy
